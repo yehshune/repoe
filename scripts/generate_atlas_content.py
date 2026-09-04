@@ -104,10 +104,14 @@ SPECIAL_CONTENT = OrderedDict([
 ])
 
 def clean_markup(text: str) -> str:
-    """清理 GGG 標記語法，例如 [Tag|Display] -> Display, [Display] -> Display"""
+    """清理 GGG 標記語法，例如 [Tag|Display] -> Display, [TagText] -> Text, [Display] -> Display"""
     if not text:
         return ""
+    # 1. 標準 [Tag|Display] -> Display
     text = re.sub(r"\[[^|\]]+\|([^\]]+)\]", r"\1", text)
+    # 2. 缺少 | 分隔線之標籤 (英文 Tag 緊接非 ASCII 翻譯文字，如 [ContainsDelirium譫妄之鏡] -> 譫妄之鏡)
+    text = re.sub(r"\[[A-Za-z0-9_]+([^\x00-\x7f][^\]]*)\]", r"\1", text)
+    # 3. 一般 [Display] -> Display
     text = re.sub(r"\[([^\]]+)\]", r"\1", text)
     return text.strip()
 
