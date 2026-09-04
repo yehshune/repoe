@@ -59,7 +59,7 @@ SPECIAL_CONTENT = OrderedDict([
     ])),
     ("1003", OrderedDict([
         ("name", "Cleansed"),
-        ("icon", "AtlasIconContentSanctificationBoss"),
+        ("icon", "AtlasIconContentSanctification"),
         ("desc", "Area has been Cleansed."),
         ("translates", OrderedDict([
             ("traditional chinese", OrderedDict([
@@ -92,7 +92,7 @@ SPECIAL_CONTENT = OrderedDict([
     ])),
     ("1006", OrderedDict([
         ("name", "Deadly Map Boss"),
-        ("icon", "AtlasIconContentMapBoss"),
+        ("icon", "AtlasIconContentMapBossSpecial"),
         ("desc", "Area contains a Deadly Map Boss."),
         ("translates", OrderedDict([
             ("traditional chinese", OrderedDict([
