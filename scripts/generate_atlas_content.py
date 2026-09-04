@@ -35,17 +35,6 @@ SPECIAL_CONTENT = OrderedDict([
             ]))
         ]))
     ])),
-    ("1001", OrderedDict([
-        ("name", "Grand Expedition"),
-        ("icon", "AtlasIconContentExpedition"),
-        ("desc", "Area contains a Grand Expedition"),
-        ("translates", OrderedDict([
-            ("traditional chinese", OrderedDict([
-                ("name", "大型探險"),
-                ("desc", "區域含有一個大型探險")
-            ]))
-        ]))
-    ])),
     ("1002", OrderedDict([
         ("name", "Delirium Fog"),
         ("icon", "AtlasIconContentDelirium"),
@@ -109,28 +98,6 @@ SPECIAL_CONTENT = OrderedDict([
             ("traditional chinese", OrderedDict([
                 ("name", "宏偉之鏡"),
                 ("desc", "包含地圖頭目的倒影；擊敗頭目後，譫妄迷霧會擴散到鄰近地圖。")
-            ]))
-        ]))
-    ])),
-    ("1008", OrderedDict([
-        ("name", "Unique Map"),
-        ("icon", "AtlasIconContentUniqueMap"),
-        ("desc", "Area is a Unique Map."),
-        ("translates", OrderedDict([
-            ("traditional chinese", OrderedDict([
-                ("name", "傳奇地圖"),
-                ("desc", "區域為傳奇地圖。")
-            ]))
-        ]))
-    ])),
-    ("1009", OrderedDict([
-        ("name", "Hideout"),
-        ("icon", "AtlasIconContentHideout"),
-        ("desc", "Area contains a Hideout."),
-        ("translates", OrderedDict([
-            ("traditional chinese", OrderedDict([
-                ("name", "藏身處"),
-                ("desc", "區域含有一個藏身處。")
             ]))
         ]))
     ]))
