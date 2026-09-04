@@ -134,8 +134,9 @@ def build_atlas_maps_from_data(output_path=DEFAULT_OUTPUT_JSON):
         if is_hideout:
             tags_set.add("hideout")
 
-        # (i) 高塔
-        if pin_id in ["DefaultTower", "WallTower", "PrecursorTower"] or "tower" in map_id_lower:
+        # (i) 高塔 (原生 WorldArea Tags 包含 "map_tower")
+        wa_tags = [t["Id"] for t in wa_en["Tags"]] if wa_en["Tags"] else []
+        if "map_tower" in wa_tags:
             tags_set.add("tower")
 
         # (j) 傳奇地圖
