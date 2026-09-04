@@ -1,4 +1,4 @@
-"""
+﻿"""
 parse_endgame_maps.py
 - 由 GGG 官方 CDN 直接下載並解析 PoE 2 最新 EndgameMaps.dat64 的示範腳本
 """
@@ -6,7 +6,7 @@ import sys
 import os
 import json
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 

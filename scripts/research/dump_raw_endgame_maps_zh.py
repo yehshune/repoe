@@ -1,4 +1,4 @@
-"""
+﻿"""
 dump_raw_endgame_maps_zh.py
 - 由 GGG 官方 PoE 2 CDN 提取所有 173 筆終局地圖的完整原始資料
 - 包含 WorldArea 與 EndgameMapSettings 兩大層級的原始欄位 (繁體中文)
@@ -8,7 +8,7 @@ import os
 import json
 from collections import OrderedDict
 
-REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 if REPO_ROOT not in sys.path:
     sys.path.insert(0, REPO_ROOT)
 
