@@ -103,3 +103,14 @@ ENV/
 .vscode/
 /.vs/ProjectSettings.json
 /.vs/slnx.sqlite
+
+# Virtual environment
+.venv/
+
+# Generated script output data
+output/*
+!output/.gitkeep
+scripts/*.json
+atlas_maps*.json
+raw_endgame_maps*.json
+endgame_maps*.json
