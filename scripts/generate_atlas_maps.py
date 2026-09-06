@@ -53,7 +53,28 @@ def prettify_id(code: str) -> str:
         s = s[3:]
     return re.sub(r"([a-z])([A-Z])", r"\1 \2", s).strip()
 
+def apply_poe2_spec_patches():
+    from PyPoE.poe.file.specification.data.poe2 import specification
+    from PyPoE.poe.file.specification.fields import Field
+    if 'WorldAreas.dat' in specification:
+        wa = specification['WorldAreas.dat']
+        for rf in ('Unknown16', 'Key9', 'Unknown17', 'Unknown18', 'Unknown19'):
+            if rf in wa.columns_data: del wa.columns_data[rf]
+            if rf in wa.fields: del wa.fields[rf]
+    if 'Mods.dat' in specification:
+        m = specification['Mods.dat']
+        if 'Unknown_New16' not in m.fields:
+            from collections import OrderedDict
+            new_cols = OrderedDict()
+            for k, v in m.columns_data.items():
+                new_cols[k] = v
+                if k == 'AuraFlags':
+                    new_cols['Unknown_New16'] = True
+            m.columns_data = new_cols
+            m.fields['Unknown_New16'] = Field(name='Unknown_New16', type='ref|list|int')
+
 def build_atlas_maps_from_data(output_path=DEFAULT_OUTPUT_JSON):
+    apply_poe2_spec_patches()
     print("[1/3] 連線 GGG 官方 CDN (PoE 2)...")
     cdn_url = get_cdn_url(2)
     fs = load_file_system(cdn_url)
